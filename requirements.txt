@@ -1,0 +1,10 @@
+streamlit
+langchain-ollama
+rdkit
+quimb
+plotly
+requests
+vina
+torch
+transformers
+system requirement: apt-get install -y openbabel
