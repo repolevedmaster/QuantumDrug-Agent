@@ -1,135 +1,48 @@
-# 🧬 Quantum-Agent Drug Discovery Platform
+# ⚛️ Quantum-Agent Drug Discovery
 
-> Next-generation AI-powered drug discovery platform based on Multi-Agent systems
->
-> **LLM + Tensor Networks (MPS) + Molecular Generation + Docking + ADMET + Clinical Ranking**
+> **An Open-Source Multi-Agent AI Platform for AI-Assisted Drug Discovery**
 
----
+Quantum-Agent Drug Discovery is an end-to-end platform that combines **Large Language Models**, **Multi-Agent AI**, **RDKit**, **ChEMBL**, and **Quantum-inspired Tensor Networks** to automate the early stages of drug discovery.
 
-# Overview
-
-The Quantum-Agent Drug Discovery Platform is an automated AI system that takes a disease as input and performs:
-
-- Scientific literature retrieval
-- Target protein inference
-- Therapeutic hypothesis generation
-- Molecular candidate generation
-- Tensor Network (MPS)-based search space compression
-- Molecular docking simulation
-- ADMET evaluation
-- Clinical success prediction
-- Final candidate ranking and reasoning generation
-
-All processes are connected in a unified pipeline and executed through a Streamlit-based GUI.
+Instead of focusing solely on molecular generation, the platform performs the complete research workflow—from identifying therapeutic targets to generating candidate molecules and producing an explainable scientific report.
 
 ---
 
-# Features
+## ✨ Features
 
-## Research Agent
+* 🔬 **Live ChEMBL Integration**
 
-- PubMed literature search
-- Extraction of recent research papers
-- Automatic target protein inference
-- RCSB PDB structure retrieval
-- Automatic receptor acquisition
+  * Retrieve validated drug targets and mechanisms of action.
+* 🤖 **Multi-Agent AI Pipeline**
 
----
+  * Specialized AI agents collaborate to complete the drug discovery workflow.
+* 🧠 **LLM-Based Scientific Reasoning**
 
-## Hypothesis Agent
+  * Generate therapeutic hypotheses from biological knowledge.
+* 🧬 **Molecular Generation**
 
-Based on disease context and literature:
+  * Create novel molecular candidates using RDKit.
+* ⚛️ **Quantum-Inspired Search**
 
-- Therapeutic strategy generation
-- Mechanism of action inference
-- LLM-based hypothesis generation
+  * Matrix Product State (Tensor Network) compression for efficient candidate ranking.
+* 💊 **ADMET Profiling**
 
----
+  * Estimate drug-likeness and pharmacological properties.
+* 📈 **Interactive Visualization**
 
-## Generator Agent
+  * Explore candidate molecules with Plotly dashboards.
+* 📄 **Automatic Scientific Report**
 
-Generates molecular candidates using:
+  * Generate explainable reports describing the reasoning behind selected candidates.
+* 💬 **Interactive AI Assistant**
 
-- Seed molecules
-- Mutation operations
-- Crossover operations
-- RDKit-based molecular generation
-
----
-
-## Quantum Agent (Tensor Network)
-
-This is the core innovation of the system.
-
-Molecules are transformed into:
-
-Fingerprint → Tensor → Matrix Product State (MPS)
-
-This representation is used to compute:
-
-- Bond entanglement
-- Entropy
-
-Using this, the system reduces a large molecular search space by selecting only the most informative candidates.
+  * Ask questions about the generated results directly within the application.
 
 ---
 
-## Docking Agent
+# 🏗 Pipeline
 
-Supports two modes:
-
-### AutoDock Vina
-
-Performs real molecular docking simulation
-
-### Heuristic Docking
-
-Fallback mode used when Vina/OpenBabel is unavailable:
-
-- RDKit descriptor-based scoring
-
----
-
-## ADMET Agent
-
-Two evaluation modes:
-
-### ChemBERTa
-
-Uses a pretrained molecular language model
-
-### RDKit Descriptor-Based Evaluation
-
-- Lipinski Rule of Five
-- QED (drug-likeness score)
-- Physicochemical descriptors
-
----
-
-## Clinical Agent
-
-Ranks final candidates using:
-
-- Binding score
-- ADMET score
-- Drug-likeness
-- Clinical success prediction score
-
----
-
-## Reasoning Agent
-
-Uses an LLM to generate scientific explanations for:
-
-- Why the selected molecule is optimal
-- How it aligns with the therapeutic hypothesis
-- Mechanistic justification
-
----
-
-# Architecture
-
-```
+```text
 Disease
    │
    ▼
@@ -139,10 +52,11 @@ Research Agent
 Hypothesis Agent
    │
    ▼
-Generator Agent
+Molecule Generator
    │
    ▼
-Quantum MPS Agent
+Quantum Agent
+(Matrix Product States)
    │
    ▼
 Docking Agent
@@ -151,79 +65,73 @@ Docking Agent
 ADMET Agent
    │
    ▼
-Clinical Agent
+Clinical Ranking Agent
    │
    ▼
 Reasoning Agent
    │
    ▼
-Markdown Report
+Scientific Report
 ```
 
 ---
 
-# Technology Stack
+# 🤖 Multi-Agent Architecture
 
-## AI
-
-- Ollama
-- Llama 3.1
-- LangChain
-
----
-
-## Molecular AI
-
-- RDKit
-- ChemBERTa
-
----
-
-## Quantum-Inspired Computing
-
-- Quimb
-- Matrix Product State (MPS)
-- Tensor Networks
+| Agent            | Responsibility                          |
+| ---------------- | --------------------------------------- |
+| Research Agent   | Retrieve validated targets from ChEMBL  |
+| Hypothesis Agent | Generate therapeutic hypotheses         |
+| Generator Agent  | Produce candidate molecules             |
+| Quantum Agent    | Tensor Network search-space compression |
+| Docking Agent    | Estimate target binding                 |
+| ADMET Agent      | Evaluate pharmacological properties     |
+| Clinical Agent   | Rank candidates                         |
+| Reasoning Agent  | Explain scientific rationale            |
+| Report Agent     | Generate final report                   |
 
 ---
 
-## Drug Discovery Tools
+# ⚛ Why Tensor Networks?
 
-- AutoDock Vina
-- OpenBabel
-- PubMed API
-- RCSB PDB
+Drug discovery explores an enormous molecular search space.
+
+Instead of exhaustively evaluating every molecule, this project applies **Matrix Product States (MPS)** to estimate molecular information complexity and prioritize promising candidates before downstream evaluation.
+
+This quantum-inspired approach enables:
+
+* Search-space compression
+* Entanglement-based ranking
+* Faster candidate prioritization
+* Explainable scoring
 
 ---
 
-## Visualization
+# 🧬 Technologies
 
-- Streamlit
-- Plotly
+* Python
+* Streamlit
+* RDKit
+* ChEMBL API
+* Ollama
+* Llama 3.1
+* Plotly
+* NumPy
+* Quimb (Tensor Networks)
 
 ---
 
-# Installation
+# 🚀 Installation
 
 ```bash
-git clone https://github.com/repolevedmaster/QuantumDrug-Agent
+git clone https://github.com/yourname/Quantum-Agent-Drug-Discovery.git
 
-cd Quantum-Agent-DrugDiscovery
-```
+cd Quantum-Agent-Drug-Discovery
 
-Install dependencies:
-
-```bash
 pip install -r requirements.txt
 ```
 
-Download Ollama model:
-
-```bash
-ollama pull llama3.1
-```
-
-Run the application:
+Run:
 
 ```bash
 streamlit run app.py
@@ -231,119 +139,107 @@ streamlit run app.py
 
 ---
 
-# Example Pipeline
+# 📊 Example Workflow
 
+Input
+
+```text
+Disease:
+Heart Failure
 ```
-Disease
 
 ↓
 
-Research
+Research Agent
+
+```text
+Retrieve validated drug targets
+```
 
 ↓
 
-Target Protein
+Hypothesis Agent
+
+```text
+Generate treatment hypothesis
+```
 
 ↓
 
-Hypothesis
+Generator
+
+```text
+Generate candidate molecules
+```
 
 ↓
 
-Candidate Molecules
+Quantum Ranking
 
-↓
-
-Tensor Network Compression
-
-↓
-
-Docking
+```text
+Tensor Network compression
+```
 
 ↓
 
 ADMET
 
-↓
-
-Clinical Ranking
-
-↓
-
-Top Drug Candidate
-
-↓
-
-Scientific Reasoning
-
-↓
-
-Markdown Report
+```text
+Drug-likeness evaluation
 ```
 
----
+↓
 
-# Screenshots
+Final Output
 
-To be added later
-
-- Dashboard
-- MPS Visualization
-- Candidate Ranking
-- Report View
-
----
-
-# Future Work
-
-- Graph Neural Networks for molecule generation
-- Diffusion models for molecular design
-- Reinforcement learning optimization
-- AlphaFold structure integration
-- Multi-target drug discovery
-- Protein language model integration
-- Automated binding site detection
-- GPU-accelerated tensor networks
+* Lead molecule
+* Drug target
+* Mechanism of action
+* ADMET profile
+* Scientific reasoning
 
 ---
 
-# Project Structure
+# 📸 Screenshots
 
-```
-.
-├── app.py
-├── requirements.txt
-├── README.md
-└── report.md
-```
+(Add screenshots here)
 
 ---
 
-# License
+# 🌍 Roadmap
+
+* [ ] Real docking engine integration
+* [ ] Protein structure support
+* [ ] AlphaFold integration
+* [ ] Molecular diffusion models
+* [ ] Reinforcement learning optimization
+* [ ] GPU acceleration
+* [ ] Multi-LLM support
+* [ ] Cloud deployment
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+Feel free to:
+
+* Open Issues
+* Submit Pull Requests
+* Suggest features
+* Improve scientific validation
+
+---
+
+# ⭐ Support
+
+If you find this project interesting, please consider giving it a **Star** ⭐ on GitHub.
+
+It helps the project reach more researchers and developers.
+
+---
+
+# 📜 License
 
 MIT License
-
----
-
-# Disclaimer
-
-This project is developed for research and educational purposes only.
-
-The generated compounds are not actual drugs and must not be used for clinical or medical purposes.
-
----
-
-# Author
-
-Quantum-Agent Drug Discovery Platform
-
-Developed with:
-
-- Python
-- Streamlit
-- LangChain
-- RDKit
-- Quimb
-- ChemBERTa
-- AutoDock Vina
-- Ollama
